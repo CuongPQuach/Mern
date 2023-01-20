@@ -71,3 +71,4 @@ value
 [1, 5, 1, 8, 3, 3]
 1
 undefined
+console.log(willThisWork);
