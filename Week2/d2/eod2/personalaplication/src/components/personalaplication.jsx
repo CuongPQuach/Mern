@@ -66,35 +66,35 @@ const Personalaplication = (props) => {
         <div  >
             <form onSubmit={onSubmithandler}> 
                 <label htmlFor="fname"> First Name: </label>
-                <input type="text" name="fname" onChange={onChangehandler} />
+                <input type="text" name="fname" onChange={onChangehandler} value={personalcard.fname}/>
                 {
                     personalcard.fname.length <2?
                     <p>First Name must at least 2 Character</p>:
                     null
                 }
                 <label htmlFor="lname"> Last Name: </label>
-                <input type="text" name="lname" onChange={onChangehandler} />
+                <input type="text" name="lname" onChange={onChangehandler} value={personalcard.lname}/>
                 {
                     personalcard.lname.length <2?
                     <p>Last Name must at least 2 Character</p>:
                     null
                 }
                 <label htmlFor="email"> Email: </label>
-                <input type="text" name="email" onChange={onChangehandler} />
+                <input type="text" name="email" onChange={onChangehandler} value={personalcard.email}/>
                 {
                     personalcard.email.length <2?
                     <p>Email must at least 2 Character</p>:
                     null
                 }
                 <label htmlFor="pass"> Password: </label>
-                <input type="password"  name="pass" onChange={onChangehandler} />
+                <input type="password"  name="pass" onChange={onChangehandler} value={personalcard.pass}/>
                 {
                     personalcard.pass.length <8?
                     <p>Password must at least 8 Character</p>:
                     null
                 }
                 <label htmlFor="confirmpass"> Confirm Password: </label>
-                <input type="password"  name="confirmpass" onChange={onChangehandler}/>
+                <input type="password"  name="confirmpass" onChange={onChangehandler} value={personalcard.confirmpass}/>
                 {
                     personalcard.confirmpass !== personalcard.pass?
                     <p>Passowrd must at matching confirm password</p>:
