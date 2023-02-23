@@ -18,10 +18,10 @@ const DisplayAllProducts = (props) => {
             })
     },[])
 
-    const deleteHandler = (e) =>{
-        let {id} = e
-        console.log(e)
-        axios.delete(`http://localhost:8000/api/deleteproduct/`)
+    //  when passing e need to change E to varios match the axios
+    const deleteHandler = (id) =>{
+        console.log(id)
+        axios.delete(`http://localhost:8000/api/deleteproduct/${id}`)
             .then((res) => {
                 navigate('/')
             })
@@ -33,7 +33,7 @@ const DisplayAllProducts = (props) => {
 
 
     return(
-        <div>
+        <div>``
             <h2>Display Products</h2>
             {
                 allProducts.map((product) =>(
@@ -43,7 +43,7 @@ const DisplayAllProducts = (props) => {
                         <p>Desriptsion: {product.productdescription}</p>
                         <Link to={`/oneproduct/${product._id}`}>Detail</Link>
                         <Link to={`/updateproduct/${product._id}`}>Edit</Link>
-                        {/* <Link onClick={(e) => {deleteHandler(product._id)}}>Delete</Link> */}
+                        <Link onClick={(e) => {deleteHandler(product._id)}}>Delete</Link>
                     </div>
                 ))
             }
